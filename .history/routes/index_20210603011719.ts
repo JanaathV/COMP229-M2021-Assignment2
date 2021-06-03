@@ -7,34 +7,35 @@ router.get('/', function(req, res, next)
 {
   res.render('index', { title: 'Home', page: 'home' });
 });
-
 /* GET home page. */
+
 router.get('/home', function(req, res, next) 
 {
-  res.render('index', { title: 'Home', page: 'home'  });
+  res.render('index', { title: 'Home', page: 'home' });
 });
+/* GET About page. */
 
-/* GET about page. */
 router.get('/about', function(req, res, next) 
 {
-  res.render('index', { title: 'About Us', page: 'about'  });
+  res.render('index', { title: 'About', page: 'about' });
 });
+/* GET Projects page. */
 
-/* GET projects page. */
 router.get('/projects', function(req, res, next) 
 {
-  res.render('index', { title: 'Our Projects', page: 'projects'  });
+  res.render('index', { title: 'Projects', page: 'projects' });
 });
+/* GET Services page. */
 
-/* GET services page. */
 router.get('/services', function(req, res, next) 
 {
-  res.render('index', { title: 'Our Services', page: 'services'  });
+  res.render('index', { title: 'Services' , page: 'services' });
 });
+/* GET Contact page. */
 
-/* GET contact page. */
 router.get('/contact', function(req, res, next) 
 {
-  res.render('index', { title: 'Contact Us', page: 'contact'  });
+  res.render('index', { title: 'Contact', page: 'contact' });
 });
+
 //module.exports = router;
