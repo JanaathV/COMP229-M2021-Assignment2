@@ -5,7 +5,7 @@ export default router;
 /* GET home page. */
 router.get('/', function(req, res, next) 
 {
-  res.render('index', { title: 'Home', });
+  res.render('index', { title: 'Home'});
 });
 
 /* GET home page. */
@@ -35,6 +35,6 @@ router.get('/services', function(req, res, next)
 /* GET contact page. */
 router.get('/contact', function(req, res, next) 
 {
-  res.render('index', { title: 'Contact'});
+  res.render('index', { title: 'Contact Us', page: 'contact'  });
 });
 //module.exports = router;

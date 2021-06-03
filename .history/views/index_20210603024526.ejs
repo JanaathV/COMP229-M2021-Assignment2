@@ -20,7 +20,10 @@
   <div class="container">
     <h1>Welcome to the <%= title %> page</h1>
   </div>
-  
+
+  <main>
+    <%- include(./content + page + .ejs) %>
+  </main>
   
   <!-- Bottom Nav -->
   <footer>
