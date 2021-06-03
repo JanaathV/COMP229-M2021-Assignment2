@@ -5,28 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
-  <!-- CSS Section -->
+  <!--CSS Section-->
   <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="/Content/app.css">
 </head>
 <body>
-  <!-- Navigation Section -->
-  <header>
-    <%- include('./components/header.ejs'); %>
-  </header>
-
-  <!-- Main Content Area -->
+<!--Navigation-->
+<header>
+  <%- include('./components/header.ejs')%>
+</header>
+  
+  
+  <!--Main Content-->
   <main>
     <%- include('./content/' + page + '.ejs'); %>
   </main>
-  
-  <!-- Bottom Nav -->
+
+  <!--Bottom Nav-->
   <footer>
-    <%- include('./components/footer.ejs'); %>
+    <%- include('./components/footer.ejs')%>
   </footer>
-    
-  <!-- JavaScript Section -->
+
+  
+
+  <!--Javascript Section-->
   <script src="/jquery/dist/jquery.min.js"></script>
   <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/Scripts/app.js"></script>
