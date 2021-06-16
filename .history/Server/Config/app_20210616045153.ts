@@ -9,15 +9,10 @@ import mongoose, { mongo } from 'mongoose';
 import session from 'express-session';
 import passport from 'passport';
 import passportLocal from 'passport-local';
-import cors from 'cors';
 
 //Authentication Objects
 
 let localStrategy = passportLocal.Strategy;
-import User from '../Models/user';
-
-// Module for auth messaging and error management
-import flash from 'connect-flash';
 
 import indexRouter from '../Routes/index';
 import clothingRouter from '../Routes/clothing';
@@ -52,31 +47,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, "../../node_modules")));
-
-// Add support for cors
-
-app.use(cors());
-
-// Setup Express Session
-app.use(session({
-  secret: DBConfig.Secret,
-  saveUninitialized: false,
-  resave: false
-}));
-
-// Initialize flash
-app.use(flash());
-
-// Initialize passport
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Implement an Auth Strategy
-passport.use(User.createStrategy());
-
-// Serialize and Deserialize user data
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 //Routing happens here
 app.use('/', indexRouter);

@@ -59,24 +59,8 @@ app.use(cors());
 
 // Setup Express Session
 app.use(session({
-  secret: DBConfig.Secret,
-  saveUninitialized: false,
-  resave: false
+  secret: DBConfig.Secret
 }));
-
-// Initialize flash
-app.use(flash());
-
-// Initialize passport
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Implement an Auth Strategy
-passport.use(User.createStrategy());
-
-// Serialize and Deserialize user data
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 //Routing happens here
 app.use('/', indexRouter);
