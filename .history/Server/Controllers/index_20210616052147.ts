@@ -32,7 +32,7 @@ export function DisplayLoginPage(req: Request, res: Response, next: NextFunction
 {
     if(!req.user)
     {
-        return res.render('index', { title: 'Login', page: 'login', messages: req.flash('loginMessage')  });
+        return res.render('index', { title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: UserDisplayName(req)  });
     }
 
     return res.redirect('/clothing-list');
@@ -41,14 +41,14 @@ export function DisplayLoginPage(req: Request, res: Response, next: NextFunction
 export function ProcessLoginPage(req: Request, res: Response, next: NextFunction): void
 {
     passport.authenticate('local', (err, user, info) => {
-        // Are there server errors?
+        // are there server errors?
         if(err)
         {
             console.error(err);
             return next(err);
         }
 
-        // Are there login errors?
+        // are there login errors?
         if(!user)
         {
             req.flash('loginMessage', 'Authentication Error');
@@ -56,7 +56,7 @@ export function ProcessLoginPage(req: Request, res: Response, next: NextFunction
         }
 
         req.login(user, (err) =>
-        // Are there DB errors?
+        // are there db errors?
         {
             if(err)
             {
@@ -74,7 +74,7 @@ export function DisplayRegisterPage(req: Request, res: Response, next: NextFunct
 {
     if(!req.user)
     {
-        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage')  });
+        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: UserDisplayName(req)  });
     }
 
     return res.redirect('/clothing-list');
@@ -82,7 +82,7 @@ export function DisplayRegisterPage(req: Request, res: Response, next: NextFunct
 
 export function ProcessRegisterPage(req: Request, res: Response, next: NextFunction): void
 {
-    // Instantiate a new User Object
+    // instantiate a new User Object
     let newUser = new User
     ({
         username: req.body.username,
@@ -104,7 +104,7 @@ export function ProcessRegisterPage(req: Request, res: Response, next: NextFunct
             return res.redirect('/register');
         }
 
-        // After successful registration - Login the user
+        // after successful registration - login the user
         return passport.authenticate('local')(req, res, () =>{
             return res.redirect('/clothing-list');
         });

@@ -32,7 +32,7 @@ export function DisplayLoginPage(req: Request, res: Response, next: NextFunction
 {
     if(!req.user)
     {
-        return res.render('index', { title: 'Login', page: 'login', messages: req.flash('loginMessage')  });
+        return res.render('index', { title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: UserDisplayName(req)  });
     }
 
     return res.redirect('/clothing-list');
@@ -74,7 +74,7 @@ export function DisplayRegisterPage(req: Request, res: Response, next: NextFunct
 {
     if(!req.user)
     {
-        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage')  });
+        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: UserDisplayName(req)  });
     }
 
     return res.redirect('/clothing-list');
