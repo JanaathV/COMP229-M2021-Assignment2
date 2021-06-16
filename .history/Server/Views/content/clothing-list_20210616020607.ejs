@@ -1,0 +1,37 @@
+<h1>Clothing List</h1>
+
+<div class="row">
+    <div class="col">
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Category</th>
+                <th scope="col">Colour</th>
+                <th scope="col">Size</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                <% for(let count = 0; count < clothing.length; count++) { %>
+
+              <tr>
+                <th scope="row"><%= count + 1 %></th>
+                <td>clothing[count].Name</td>
+                <td>clothing[count].Brand</td>
+                <td>clothing[count].Category</td>
+                <td>clothing[count].Colour</td>
+                <td>clothing[count].Size</td>
+                <td>clothing[count].Price</td>
+              </tr>
+
+              <% } %>
+            </tbody>
+          </table>
+
+    </div>
+</div>
