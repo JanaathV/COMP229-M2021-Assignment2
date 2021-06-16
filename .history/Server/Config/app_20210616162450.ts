@@ -20,7 +20,7 @@ import User from '../Models/user';
 import flash from 'connect-flash';
 
 import indexRouter from '../Routes/index';
-import contactRouter from '../Routes/contact';
+import contactRouter from '../Routes/contact-list';
 
 // App Configuration
 

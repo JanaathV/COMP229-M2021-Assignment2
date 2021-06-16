@@ -20,7 +20,7 @@ import User from '../Models/user';
 import flash from 'connect-flash';
 
 import indexRouter from '../Routes/index';
-import contactRouter from '../Routes/contact';
+import clothingRouter from '../Routes/contact-list';
 
 // App Configuration
 
@@ -80,7 +80,7 @@ passport.deserializeUser(User.deserializeUser());
 
 //Routing happens here
 app.use('/', indexRouter);
-app.use('/contact-list', contactRouter);
+app.use('/clothing-list', clothingRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -11,8 +11,8 @@ const ClothingSchema = new Schema
     price: Number
 },
 {
-    collection: "clothing"
+    collection: "contact-list"
 });
 
-const Model = mongoose.model("Clothing", ClothingSchema);
+const Model = mongoose.model("Contact", ClothingSchema);
 export default Model;

@@ -4,9 +4,11 @@ const Schema = mongoose.Schema; //Alias for Mongoose Schema
 const ContactSchema = new Schema
 ({
     name: String,
-    email: String, 
-    phonenumber: String
-    
+    brand: String, 
+    category: String,
+    colour: String,
+    size: String,
+    price: Number
 },
 {
     collection: "contact"

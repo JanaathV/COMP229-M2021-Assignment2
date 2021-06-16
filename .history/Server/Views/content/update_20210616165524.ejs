@@ -4,20 +4,20 @@
     <form method="POST" class="col-lg-6 col-md-10 col-sm-10">
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-name">Name</span>
-            <input type="text" class="form-control" placeholder="Enter Contact Name" aria-label="Contact Name" aria-describedby="Contact Name"
-            name="name" value="<%= contact.name %>" required>
+            <input type="text" class="form-control" placeholder="Enter Clothing Name" aria-label="Clothing Name" aria-describedby="Clothing Name"
+            name="name" value="<%= clothing.name %>" required>
         </div>
 
         <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-name">E-Mail</span>
-            <input type="text" class="form-control" placeholder="Enter Contact E-Mail" aria-label="Contact Email" aria-describedby="Contact Email"
-            name="email" value="<%= contact.email %>" required>
+            <span class="input-group-text" id="inputGroup-name">Brand</span>
+            <input type="text" class="form-control" placeholder="Enter Clothing Name" aria-label="Clothing Brand" aria-describedby="Clothing Brand"
+            name="brand" value="<%= clothing.brand %>" required>
         </div>
 
         <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-name">Phone Number</span>
-            <input type="text" class="form-control" placeholder="Enter Contact Phone Number" aria-label="Contact Phone Number" aria-describedby="Contact Phone Number"
-            name="phonenumber" value="<%= contact.phonenumber %>" required>
+            <span class="input-group-text" id="inputGroup-name">Category</span>
+            <input type="text" class="form-control" placeholder="Enter Clothing Category" aria-label="Clothing Category" aria-describedby="Clothing Category"
+            name="category" value="<%= clothing.category %>" required>
         </div>
 
             <% if(title == "Edit") { %>
