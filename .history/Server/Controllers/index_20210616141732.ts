@@ -3,40 +3,36 @@ import passport from 'passport';
 
 import User from '../Models/user';
 
-//Import UTL functions
-
-import { UserDisplayName } from '../../Utl';
-
 export function DisplayHomePage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'Home', page: 'home', displayName: UserDisplayName(req) });
+    res.render('index', { title: 'Home', page: 'home' });
 }
 
 export function DisplayAboutPage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'About Me', page: 'about', displayName: UserDisplayName(req) });
+    res.render('index', { title: 'About Me', page: 'about' });
 }
 
 export function DisplayProjectsPage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'My Projects', page: 'projects', displayName: UserDisplayName(req) });
+    res.render('index', { title: 'My Projects', page: 'projects' });
 }
 
 export function DisplayServicesPage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'My Services', page: 'services', displayName: UserDisplayName(req) });
+    res.render('index', { title: 'My Services', page: 'services' });
 }
 
 export function DisplayContactPage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'Contact Me', page: 'contact', displayName: UserDisplayName(req) });
+    res.render('index', { title: 'Contact Me', page: 'contact'});
 }
 
 export function DisplayLoginPage(req: Request, res: Response, next: NextFunction): void
 {
     if(!req.user)
     {
-        return res.render('index', { title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: UserDisplayName(req)  });
+        return res.render('index', { title: 'Login', page: 'login', messages: req.flash('loginMessage')  });
     }
 
     return res.redirect('/clothing-list');
@@ -46,7 +42,7 @@ export function ProcessLoginPage(req: Request, res: Response, next: NextFunction
 {
     passport.authenticate('local', (err, user, info) => {
         // Are there server errors?
-
+        
         if(err)
         {
             console.error(err);
@@ -81,7 +77,7 @@ export function DisplayRegisterPage(req: Request, res: Response, next: NextFunct
 {
     if(!req.user)
     {
-        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: UserDisplayName(req)  });
+        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage')  });
     }
 
     return res.redirect('/clothing-list');
