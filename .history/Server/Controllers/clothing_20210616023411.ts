@@ -20,12 +20,9 @@ export function DisplayEditPage(req: Request, res: Response, next: NextFunction)
 {
     let id = req.params.id;
 
-    console.log(id);
+    //Pass the id to the db
 
-    // pass the id to the db
-
-    //db.clothing.find({"_id": id})
-    Clothing.findById(id, {}, {}, (err, clothingItemToEdit) => 
+    Clothing.findById(id, {}, {}, (err, clothingItemToEdit) =>
     {
         if(err)
         {
@@ -33,7 +30,8 @@ export function DisplayEditPage(req: Request, res: Response, next: NextFunction)
             res.end(err);
         }
 
-        // show the edit view
-        res.render('index', {title: 'Edit', page: 'edit', item: clothingItemToEdit});
+        //Show the edit view
+        res.render('index', {title: 'Edit', page: 'edit', clothing: clothingItemToEdit})
     });
+
 }
